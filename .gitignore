@@ -4,3 +4,5 @@
 *.vcxproj.user
 x64
 .vs
+build
+.vscode

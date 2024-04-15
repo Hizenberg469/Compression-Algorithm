@@ -1,0 +1,11 @@
+if(COMPILE_COMPRESSOR)
+    add_executable(${COMPRESSOR} "main-c.c")
+    target_link_libraries(${COMPRESSOR} PUBLIC ${CLIBRARY} ${HUFFMAN_LIBRARY})
+    target_include_directories(${COMPRESSOR} PUBLIC "../include")
+endif()
+
+if(COMPILE_EXTRACTOR)
+    add_executable(${EXTRACTOR} "main-e.c")
+    target_link_libraries(${EXTRACTOR} PUBLIC ${CLIBRARY} ${HUFFMAN_LIBRARY})
+    target_include_directories(${EXTRACTOR} PUBLIC "../include")
+endif()
