@@ -71,8 +71,9 @@ void CompressFile(FILE* input, BIT_FILE* output, int argc, char* argv[]) {
 		print_model(nodes, codes);
 
 	compress_data(input, output, codes);
+	free( (char *) counts );
+	free( (char *) nodes );
 	free((char*)codes);
-	
 }
 
 void ExpandFile(BIT_FILE* input, FILE* output, int argc, char* argv[]) {
@@ -211,7 +212,7 @@ void scale_counts(unsigned long* counts, NODE* nodes) {
 
 	for (i = 0; i < 256; i++) {
 		nodes[i].count = (unsigned int)(counts[i] / max_count);
-		if (nodes[i].count = 0 && counts[i] != 0)
+		if (nodes[i].count == 0 && counts[i] != 0)
 			nodes[i].count = 1;
 	}
 

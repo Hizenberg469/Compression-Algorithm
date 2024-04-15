@@ -117,5 +117,5 @@ void print_ratios(char* input, char* output) {
 	printf("Output bytes: %ld\n", output_size);
 	if (output_size == 0)
 		output_size = 1;
-	printf("Compression ratio: %d\n", ratio);
+	printf("Compression ratio: %d%%\n", ratio);
 }
